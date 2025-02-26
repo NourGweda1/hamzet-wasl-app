@@ -44,8 +44,7 @@ extension AIEngineWidget {
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
             let parameters: [String: Any] = [
-                "query": "Interests: Engineering | Location: United States | Date: 2026-02-01",
-                    //generalCriteria,
+                "query": generalCriteria,
                 "num_matches": 10
             ]
 
