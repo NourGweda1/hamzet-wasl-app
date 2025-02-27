@@ -67,8 +67,21 @@ struct SearchCriteriaView: View {
                            selectedDate: $selectedDate)
             .clearModalBackground()
         }.onChange(of: selectedDate) { newValue in
-            internalSelectedDate = newValue.toString()
+            if compareDates(selectedDate: selectedDate.toString()) {
+                internalSelectedDate = ""
+            } else {
+                internalSelectedDate = newValue.toString()
+            }
         }
+    }
+
+    func compareDates(selectedDate: String) -> Bool {
+        let calendar = Calendar.current
+
+        let components1 = calendar.dateComponents([.year, .month, .day], from: selectedDate.toDate() ?? Date())
+        let components2 = calendar.dateComponents([.year, .month, .day], from: Date())
+
+        return components1 == components2
     }
 }
 

@@ -47,11 +47,11 @@ struct RecommendationsWidget: View {
                      .frame(maxWidth: .infinity, alignment: .center)
 
                     Spacer()
-                }.isHidden(events.isEmpty, remove: true)
+                }.isHidden(events.isEmpty, remove: false)
 
                 RecommendationsPlaceHolderView()
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .isHidden(!events.isEmpty, remove: true)
+                    .isHidden(!events.isEmpty || isLoading, remove: true)
 
             }.padding(.horizontal, 16)
              .background(Color.white)

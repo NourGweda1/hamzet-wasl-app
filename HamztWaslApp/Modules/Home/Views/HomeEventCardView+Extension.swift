@@ -36,7 +36,7 @@ extension HomeEventCardView {
         inputFormatter.dateFormat = "yyyy-MM-dd" // Input format
 
         let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = "dd MMM" // Output format (07 Aug)
+        outputFormatter.dateFormat = "dd MMM \n yyyy" // Output format (07 Aug)
 
         if let date = inputFormatter.date(from: dateString) {
             return outputFormatter.string(from: date)

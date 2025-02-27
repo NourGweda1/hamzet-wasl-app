@@ -24,6 +24,8 @@ extension AIEngineWidget {
         @Published var generalCriteria: String = ""
         @Published var criteriaDictionary: [String: String] = ["": ""]
         @Published var recommendedEvents: [Event] = []
+        @Published var isRecommendationPresented: Bool = false
+        @Published var isLoading: Bool = false
 
         private var cancellables = Set<AnyCancellable>()
 
@@ -78,16 +80,36 @@ extension AIEngineWidget {
         }
 
         func fetchData() {
-            fetchEvents { result in
-                switch result {
-                case .success(let events):
-                    self.recommendedEvents = events
-                    debugPrint(events)
-                case .failure(let error):
-                    debugPrint(error.localizedDescription)
+            DispatchQueue.main.async {
+                self.isLoading = true
+                self.fetchEvents { result in
+                    switch result {
+                    case .success(let events):
+                        self.recommendedEvents = events
+                        debugPrint(events)
+                        self.isLoading = false
+                        self.isRecommendationPresented = true
+                    case .failure(let error):
+                        debugPrint(error.localizedDescription)
+                    }
                 }
             }
         }
 
+        func resetAllData() {
+            selectedInterets = ""
+            selectedLocation = ""
+            selectedDate = Date()
+            note = ""
+            futureDate = Calendar.current.date(byAdding: .year, value: 10, to: Date()) ?? Date()
+            generalCriteria = ""
+            criteriaDictionary = ["": ""]
+            recommendedEvents = []
+            isValidInterests = false
+            isValidLocation = true
+            isValidDate = true
+            isNoteValid = true
+            isValidInputDate = true
+        }
     }
 }

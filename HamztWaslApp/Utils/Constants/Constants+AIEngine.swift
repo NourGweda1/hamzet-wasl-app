@@ -20,12 +20,13 @@ extension Constants {
         static let or = "OR"
         static let save = "Save"
         static let searchForCountries = "Search for country"
-        static let pleaseFillTheField = "Please fill at least one of the fields to continue"
+        static let pleaseFillTheField = "Kindly complete all three fields or provide a prompt to proceed."
         static let match = " Match"
         static let interestsKeyword = "Interests:"
         static let locationKeyword = "Location:"
         static let dateKeyword = "Date:"
         static let noteKeyword = "note"
+        static let clear = "Clear"
     }
 }
 

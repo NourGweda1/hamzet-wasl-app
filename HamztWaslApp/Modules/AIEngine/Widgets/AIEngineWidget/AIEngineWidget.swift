@@ -12,7 +12,6 @@ struct AIEngineWidget: View {
     @Binding var isPresented: Bool
     @StateObject var handler = Handler()
     @State var shouldShowAnimation: Bool = false
-    @State var isRecommendationPresented: Bool = false
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -33,6 +32,7 @@ struct AIEngineWidget: View {
                     .onDisappear {
                         shouldShowAnimation = false
                     }
+                    .frame(height: 80)
 
                 SearchCriteriaView(selectedInterets: $handler.selectedInterets,
                                    selectedLocation: $handler.selectedLocation,
@@ -52,20 +52,30 @@ struct AIEngineWidget: View {
                 HamztWaslButton(title: Constants.AIEngineConstants.submit,
                                 buttonAction: {
                     handleSubmitAction()
-                    isRecommendationPresented = true
                 }).buttonStyle(MainButtonStyle())
-                  .padding(.bottom, 50)
                   .opacity(handleSubmitValidation() ? 1 : 0.5)
                   .disabled(!handleSubmitValidation())
 
+                Button {
+                    handler.resetAllData()
+                    shouldShowAnimation = false
+                } label: {
+                    Text(Constants.AIEngineConstants.clear)
+                        .font(.system(size: 14, weight: .semibold, design: .default))
+                        .foregroundColor(.black)
+                }.frame(maxWidth: .infinity, minHeight: 54, maxHeight: 54, alignment: .center)
+                 .background(Color.themeColors.buttonBackground)
+                .cornerRadius(10)
+                .padding(.bottom, 50)
+
             }.padding(.vertical, 24)
+             .padding(.top, 80)
              .padding(.horizontal, 16)
              .background(Color.white)
              .roundedCorner(20, corners: [.topLeft, .topRight])
-             .padding(.top, 114)
 
-            NavigationLink(isActive: $isRecommendationPresented) {
-                RecommendationsWidget(isPresented: $isRecommendationPresented,
+            NavigationLink(isActive: $handler.isRecommendationPresented) {
+                RecommendationsWidget(isPresented: $handler.isRecommendationPresented,
                                       recommendations: $handler.generalCriteria,
                                       events: $handler.recommendedEvents)
             } label: {
@@ -74,6 +84,10 @@ struct AIEngineWidget: View {
 
         }.modifier(CustomToolbarModifier(isPresented: $isPresented, isNotificationVisible: true))
          .ignoresSafeArea()
+         .overlay(content: {
+             LoadingHamztWaslView()
+                 .isHidden(!handler.isLoading, remove: true)
+        })
          .onChange(of: handler.selectedInterets) { _ in
                 setTextfieldsValidation()
          }.onChange(of: handler.selectedLocation) { _ in
