@@ -66,6 +66,7 @@ struct RecommendationsWidget: View {
          .onAppear {
              addLoadingEffect()
         }
+         .accessibilityIdentifier("RecommendationsWidget")
     }
 }
 

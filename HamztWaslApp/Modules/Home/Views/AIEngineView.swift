@@ -39,6 +39,7 @@ struct AIEngineView: View {
                             .frame(width: 50, height: 50)
                     )
             }.padding(.trailing, 8)
+             .accessibilityIdentifier("aiEngineButton")
         }.padding(24)
         .background(
             RoundedRectangle(cornerRadius: 20)

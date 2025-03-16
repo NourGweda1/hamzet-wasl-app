@@ -11,6 +11,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4C0DC1F92D82D3610051A12C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C2A01F62D5CEA320048FDB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C2A01FD2D5CEA320048FDB2;
+			remoteInfo = HamztWaslApp;
+		};
 		4C2A02102D5CEA350048FDB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C2A01F62D5CEA320048FDB2 /* Project object */;
@@ -28,12 +35,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0DC1F32D82D3610051A12C /* SearchCriteriaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchCriteriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2A01FE2D5CEA320048FDB2 /* HamztWaslApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamztWaslApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2A020F2D5CEA350048FDB2 /* HamztWaslAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamztWaslAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2A02192D5CEA350048FDB2 /* HamztWaslAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamztWaslAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		4C0DC1F42D82D3610051A12C /* SearchCriteriaUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SearchCriteriaUITests;
+			sourceTree = "<group>";
+		};
 		4C2A02002D5CEA320048FDB2 /* HamztWaslApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HamztWaslApp;
@@ -52,6 +65,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4C0DC1F02D82D3610051A12C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C2A01FB2D5CEA320048FDB2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +103,7 @@
 				4C2A02002D5CEA320048FDB2 /* HamztWaslApp */,
 				4C2A02122D5CEA350048FDB2 /* HamztWaslAppTests */,
 				4C2A021C2D5CEA350048FDB2 /* HamztWaslAppUITests */,
+				4C0DC1F42D82D3610051A12C /* SearchCriteriaUITests */,
 				4C2A01FF2D5CEA320048FDB2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +114,7 @@
 				4C2A01FE2D5CEA320048FDB2 /* HamztWaslApp.app */,
 				4C2A020F2D5CEA350048FDB2 /* HamztWaslAppTests.xctest */,
 				4C2A02192D5CEA350048FDB2 /* HamztWaslAppUITests.xctest */,
+				4C0DC1F32D82D3610051A12C /* SearchCriteriaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +122,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4C0DC1F22D82D3610051A12C /* SearchCriteriaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C0DC1FD2D82D3610051A12C /* Build configuration list for PBXNativeTarget "SearchCriteriaUITests" */;
+			buildPhases = (
+				4C0DC1EF2D82D3610051A12C /* Sources */,
+				4C0DC1F02D82D3610051A12C /* Frameworks */,
+				4C0DC1F12D82D3610051A12C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C0DC1FA2D82D3610051A12C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4C0DC1F42D82D3610051A12C /* SearchCriteriaUITests */,
+			);
+			name = SearchCriteriaUITests;
+			packageProductDependencies = (
+			);
+			productName = SearchCriteriaUITests;
+			productReference = 4C0DC1F32D82D3610051A12C /* SearchCriteriaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		4C2A01FD2D5CEA320048FDB2 /* HamztWaslApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C2A02232D5CEA350048FDB2 /* Build configuration list for PBXNativeTarget "HamztWaslApp" */;
@@ -179,6 +224,10 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					4C0DC1F22D82D3610051A12C = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 4C2A01FD2D5CEA320048FDB2;
+					};
 					4C2A01FD2D5CEA320048FDB2 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -212,11 +261,19 @@
 				4C2A01FD2D5CEA320048FDB2 /* HamztWaslApp */,
 				4C2A020E2D5CEA350048FDB2 /* HamztWaslAppTests */,
 				4C2A02182D5CEA350048FDB2 /* HamztWaslAppUITests */,
+				4C0DC1F22D82D3610051A12C /* SearchCriteriaUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4C0DC1F12D82D3610051A12C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C2A01FC2D5CEA320048FDB2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,6 +298,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4C0DC1EF2D82D3610051A12C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C2A01FA2D5CEA320048FDB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +329,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4C0DC1FA2D82D3610051A12C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C2A01FD2D5CEA320048FDB2 /* HamztWaslApp */;
+			targetProxy = 4C0DC1F92D82D3610051A12C /* PBXContainerItemProxy */;
+		};
 		4C2A02112D5CEA350048FDB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4C2A01FD2D5CEA320048FDB2 /* HamztWaslApp */;
@@ -278,6 +347,45 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4C0DC1FB2D82D3610051A12C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U98MB87JNM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = appone.SearchCriteriaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HamztWaslApp;
+			};
+			name = Debug;
+		};
+		4C0DC1FC2D82D3610051A12C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U98MB87JNM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = appone.SearchCriteriaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HamztWaslApp;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		4C2A02212D5CEA350048FDB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -565,6 +673,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C0DC1FD2D82D3610051A12C /* Build configuration list for PBXNativeTarget "SearchCriteriaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C0DC1FB2D82D3610051A12C /* Debug */,
+				4C0DC1FC2D82D3610051A12C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4C2A01F92D5CEA320048FDB2 /* Build configuration list for PBXProject "HamztWaslApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

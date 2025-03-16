@@ -55,6 +55,7 @@ struct SignInWidget: View {
                           isTextFieldDisabled: .constant(false),
                           isValidData: $handler.isValidEmail,
                           bindingText: $handler.emailText)
+            .accessibilityIdentifier("emailTextField")
 
             // MARK: - password textfield
             MainTextField(mode: .password,
@@ -63,6 +64,7 @@ struct SignInWidget: View {
                           isTextFieldDisabled: .constant(false),
                           isValidData: $handler.isValidPassword,
                           bindingText: $handler.passwordText)
+            .accessibilityIdentifier("passwordTextField")
 
             // MARK: - forget password
             HStack {
@@ -111,6 +113,7 @@ struct SignInWidget: View {
             }).buttonStyle(MainButtonStyle())
               .opacity(loginBtnValidation() ? 1 : 0.5)
               .disabled(!loginBtnValidation())
+              .accessibilityIdentifier("signInButton")
 
             // MARK: - social media buttons
             SocialMediaView(isSignUp: false)

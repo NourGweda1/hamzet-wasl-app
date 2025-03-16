@@ -46,6 +46,7 @@ struct AIEngineWidget: View {
 
                 SearchNoteView(note: $handler.note,
                                isNoteValid: $handler.isNoteValid)
+                .accessibilityIdentifier("SearchNoteView")
 
                 Spacer()
 
@@ -55,6 +56,7 @@ struct AIEngineWidget: View {
                 }).buttonStyle(MainButtonStyle())
                   .opacity(handleSubmitValidation() ? 1 : 0.5)
                   .disabled(!handleSubmitValidation())
+                  .accessibilityIdentifier("SubmitButton")
 
                 Button {
                     handler.resetAllData()
@@ -67,6 +69,7 @@ struct AIEngineWidget: View {
                  .background(Color.themeColors.buttonBackground)
                 .cornerRadius(10)
                 .padding(.bottom, 50)
+                .accessibilityIdentifier("ClearButton")
 
             }.padding(.vertical, 24)
              .padding(.top, 80)
@@ -78,6 +81,7 @@ struct AIEngineWidget: View {
                 RecommendationsWidget(isPresented: $handler.isRecommendationPresented,
                                       recommendations: $handler.generalCriteria,
                                       events: $handler.recommendedEvents)
+                .accessibilityIdentifier("RecommendationsView")
             } label: {
                 EmptyView()
             }
@@ -87,6 +91,7 @@ struct AIEngineWidget: View {
          .overlay(content: {
              LoadingHamztWaslView()
                  .isHidden(!handler.isLoading, remove: true)
+                 .accessibilityIdentifier("LoadingView")
         })
          .onChange(of: handler.selectedInterets) { _ in
                 setTextfieldsValidation()

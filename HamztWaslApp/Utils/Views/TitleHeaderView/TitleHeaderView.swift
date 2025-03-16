@@ -26,7 +26,7 @@ struct TitleHeaderView: View {
                 Image(IconsConstants.AIEngineConstantsIcons.closeIC)
                     .resizable()
                     .frame(width: 30, height: 30)
-            }
+            }.accessibilityIdentifier("CloseButton")
         }
     }
 }

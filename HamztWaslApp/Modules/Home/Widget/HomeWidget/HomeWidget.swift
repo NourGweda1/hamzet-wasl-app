@@ -31,7 +31,6 @@ struct HomeWidget: View {
             }
         }.edgesIgnoringSafeArea(.bottom)
         .background(Color.themeColors.primary)
-        
     }
 }
 

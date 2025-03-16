@@ -30,6 +30,7 @@ struct SearchCriteriaView: View {
                           isTextFieldDisabled: .constant(true),
                           isValidData: $isValidInterests,
                           bindingText: $selectedInterets)
+            .accessibilityIdentifier("interestsTextField")
             .onTapGesture {
                 isInterestsPresented = true
             }
@@ -41,6 +42,7 @@ struct SearchCriteriaView: View {
                           isTextFieldDisabled: .constant(true),
                           isValidData: $isValidLocation,
                           bindingText: $selectedLocation)
+            .accessibilityIdentifier("locationTextField")
             .onTapGesture {
                 isLocationPresented = true
             }
@@ -51,6 +53,7 @@ struct SearchCriteriaView: View {
                           isTextFieldDisabled: .constant(false),
                           isValidData: $isValidDate,
                           bindingText: $internalSelectedDate)
+            .accessibilityIdentifier("dateTextField")
             .onTapGesture {
                 isDatePresented = true
             }
@@ -58,14 +61,17 @@ struct SearchCriteriaView: View {
             InterestsSelectionView(isPresented: $isInterestsPresented,
                                    interestes: $selectedInterets)
             .clearModalBackground()
+            .accessibilityIdentifier("InterestsSelectionView")
         }.fullScreenCover(isPresented: $isLocationPresented) {
             CountriesWidget(isPresented: $isLocationPresented,
                             country: $selectedLocation)
             .clearModalBackground()
+            .accessibilityIdentifier("CountriesWidget")
         }.fullScreenCover(isPresented: $isDatePresented) {
             CalendarWidget(isPresented: $isDatePresented,
                            selectedDate: $selectedDate)
             .clearModalBackground()
+            .accessibilityIdentifier("CalendarWidget")
         }.onChange(of: selectedDate) { newValue in
             if compareDates(selectedDate: selectedDate.toString()) {
                 internalSelectedDate = ""

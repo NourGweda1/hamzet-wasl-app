@@ -24,10 +24,29 @@ struct CalendarWidget: View {
                 }
 
             VStack(alignment: .leading, spacing: 32) {
-                TitleHeaderView(title: Constants.AIEngineConstants.selectLocation,
-                                buttonAction: {
-                    isPresented = false
-                })
+//                TitleHeaderView(title: Constants.AIEngineConstants.selectDate,
+//                                buttonAction: {
+//                    isPresented = false
+//                }).accessibilityIdentifier("Refat")
+                HStack {
+                    Text(Constants.AIEngineConstants.selectDate)
+                        .font(.system(size: 21, weight: .semibold, design: .default))
+                        .foregroundColor(.themeColors.primary)
+
+                    Spacer()
+
+                    Button {
+                        isPresented = false
+                    } label: {
+                        Image(IconsConstants.AIEngineConstantsIcons.closeIC)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }.accessibilityIdentifier("CloseButton")
+                }
+
+                Text("Aya")
+                    .font(.title)
+                    .accessibilityIdentifier("Aya")
 
                 CalendarView(selectedDate: $internalDate)
 
